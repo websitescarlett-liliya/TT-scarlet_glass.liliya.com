@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scarlet Downloader.tiktok.com</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">SCARLET <span>DOWNLOADER</span></div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<div id="sideMenu">
+  <div style="display:flex;justify-content:space-between;margin-bottom:20px"><h3>Menu</h3><span onclick="toggleMenu()" style="cursor:pointer;font-size:22px">✕</span></div>
+  <div class="menu-item" onclick="goHome()">Home</div>
+  <div class="menu-item" onclick="showFitur()">Fitur</div>
+  <div class="menu-item" onclick="showDeskripsi()">Deskripsi Website</div>
+  <div class="menu-item" onclick="document.getElementById('colorInput').click()">4. Ubah Colors <input type="color" id="colorInput" style="display:none"></div>
+  <div class="menu-item" onclick="document.getElementById('bgInput').click()">5. Ubah Background Gallery <input type="file" id="bgInput" accept="image/*" style="display:none"></div>
+  <div class="menu-item" onclick="showProfile()">6. Profile</div>
+  <div class="menu-item" id="premiumMenu" onclick="showPremium()">7. Code Premium</div>
+  <div class="menu-item" style="margin-top:20px;color:#25D366" onclick="contactAdmin(6288801883795)">💬 Hubungi Admin Voucher</div>
+</div>
+
+<div class="container">
+  <div id="authPage" class="auth-box">
+    <h2 style="text-align:center;margin-bottom:15px">Daftar Nama Pengguna</h2>
+    <input id="username" placeholder="Nama Pengguna">
+    <input id="password" type="password" placeholder="Buat Sandi">
+    <select id="role"><option value="customer">Role: Customer</option><option value="owner">Role: Owner</option></select>
+    <input id="gmail" placeholder="Gmail">
+    <input id="wa" placeholder="No WhatsApp">
+    <button onclick="register()">Masuk</button>
+  </div>
+
+  <div id="mainPage" class="hidden">
+    <div class="link-box"><input id="tiktokLink" placeholder="Tempel link TikTok..."><span id="clearBtn" class="clear-btn">✕</span></div>
+    <div class="controls"><select id="fps"><option value="30">30 FPS</option><option value="60">60 FPS</option></select><select id="res"><option value="720">720p</option><option value="1080">1080p</option></select></div>
+    <button id="downloadBtn">Download Sekarang</button>
+    <div id="loading" style="text-align:center;margin-top:15px;display:none">Loading...</div>
+    <div id="result" style="display:none;margin-top:20px">
+      <div class="video-wrap"><video id="mainVideo" controls playsinline></video></div>
+      <div id="mp3Result" class="mp3-card"><video id="bgVideo" autoplay muted loop playsinline></video><div class="player-content"><img id="cover"><h3 id="title"></h3><audio id="audioPlayer" controls></audio></div></div>
+      <div class="action-btns"><a id="dlMp4" class="btn-mp4" download>Download MP4</a><a id="dlMp3" class="btn-mp3" download>Download MP3</a></div>
+    </div>
+    <div id="fiturPage" class="auth-box hidden" style="margin-top:20px"><h3>Fitur</h3><br>MP4 no watermark<br>MP3 background video asli<br>FPS 30-60 & Resolusi 720-1080<br>History download</div>
+    <div id="deskripsiPage" class="auth-box hidden" style="margin-top:20px"><h3>Deskripsi</h3><br>Scarlet Downloader.tiktok.com - Downloader hitam putih premium. Background putih, bg hitam. API tikwm.com</div>
+  </div>
+
+  <div id="profilePage" class="hidden auth-box">
+    <div style="text-align:center"><label for="profileInput"><img id="profileImg" class="profile-pic" src="https://i.pravatar.cc/150"></label><input type="file" id="profileInput" accept="image/*" style="display:none"><h3 id="profileName"></h3><span id="profileRole"></span></div><br>
+    <input id="editUsername" placeholder="Edit Username"><input id="editGmail" placeholder="Tambahkan Gmail"><input id="editWa" placeholder="Tambahkan WhatsApp">
+    <button id="saveProfileBtn" style="margin-bottom:15px">Simpan Profile</button><h4>History MP4/MP3</h4><div id="history"></div><br>
+    <button id="logoutBtn" style="background:#333">Keluar dari Akun</button><button id="switchBtn" style="background:#555;margin-top:10px">Ganti Akun</button>
+  </div>
+
+  <div id="premiumPage" class="hidden auth-box">
+    <h3>Code Premium (Private)</h3><br><p style="font-size:13px">Masukkan voucher untuk jadi premium. Hubungi admin WA 6288801883795 untuk dapat code.</p>
+    <input id="voucherCode" placeholder="Masukkan Code"><button id="activateBtn">Aktifkan</button>
+  </div>
+</div>
+
+<div id="adPopup"><div style="display:flex;justify-content:space-between"><b>🔥 Sponsor TikTok</b><span id="closeAd">✕</span></div><p style="font-size:13px;margin-top:8px">Hilangkan iklan tiap 1.25 menit? Aktifkan Premium!</p><button id="goPremiumBtn" style="margin-top:10px;padding:8px;background:#000;color:#fff">Dapatkan Premium</button></div>
+
+<script src="script.js"></script>
+</body>
+</html>
